@@ -17,7 +17,7 @@ app.use('/imgs',express.static(path.resolve(__dirname,'assets/imgs')))
 app.use('/js',express.static(path.resolve(__dirname,'assets/js')))
 
 app.get('/',(req,res)=>{
-    res.json({message:"Hello"})
+    res.render('index')
 })
 
 app.listen(PORT,()=>{
