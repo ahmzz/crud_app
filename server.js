@@ -15,10 +15,8 @@ app.set("view engine","ejs")
 app.use('/css',express.static(path.resolve(__dirname,'assets/css')))
 app.use('/imgs',express.static(path.resolve(__dirname,'assets/imgs')))
 app.use('/js',express.static(path.resolve(__dirname,'assets/js')))
+app.use('/',require('./server/routes/router'))
 
-app.get('/',(req,res)=>{
-    res.render('index')
-})
 
 app.listen(PORT,()=>{
     console.log("Server UP");
