@@ -2,13 +2,14 @@ const express=require('express')
 const dotenv=require('dotenv')
 const path=require('path')
 const bodyParser=require('body-parser')
+const connectDB=require('./server/database/connection')
 const app=express()
 
 dotenv.config({
     path:'config.env'
 })
 const PORT=process.env.PORT||8080
-
+connectDB()
 app.use(bodyParser.urlencoded({extended:true}))
 app.set("view engine","ejs")
 
